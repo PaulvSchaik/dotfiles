@@ -73,6 +73,7 @@
 	NIXOS_OZONE_WL = "1";
   };
 
+# hardware optie's
   hardware = {
 # OpenGL
 	opengl.enable = true;
@@ -102,12 +103,14 @@
 	killall
 	htop
 	powertop
+	usbutils
 #applications
 	gimp-with-plugins
 	spotify
 	#obsidian
 	inkscape-with-extensions
 	feh
+	swaylock-effects
 	sway-contrib.grimshot
 	yazi
 	brightnessctl
@@ -161,6 +164,7 @@
     pam = {
       services = {
         login.enableGnomeKeyring = true;
+	swaylock = {};
       };
     };
   };
