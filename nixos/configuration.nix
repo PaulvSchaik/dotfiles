@@ -11,6 +11,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   networking.hostName = "xps13";
   # networking.wireless.enable = true;  #  wireless via wpa_supplicant.
 
@@ -63,7 +65,7 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
 # sessie en hardware optie's (soms wel, soms niet nodig)
   environment.sessionVariables ={
