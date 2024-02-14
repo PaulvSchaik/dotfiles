@@ -104,6 +104,7 @@
 	htop
 	powertop
 	usbutils
+	neofetch
 #applications
 	gimp-with-plugins
 	spotify
