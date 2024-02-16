@@ -20,7 +20,7 @@ font:
     family: MesloLGS NF
     style: Bold Italic
 
-  size: 8.0
+  size: 12.0
 
 # cursor    
 cursor:
@@ -43,7 +43,7 @@ mouse:
 # de kleurtjes
 colors:
   primary:
-    background: "#2e3440"
+    background: "#000000"
     foreground: "#d8dee9"
     dim_foreground: "#a5abb6"
   cursor:
