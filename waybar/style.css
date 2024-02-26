@@ -1,74 +1,95 @@
 * {
-	font-size: 18px;
-    font-family: monospace;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
 }
-
-window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
-}
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
-}
-
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk,
-#tray {
-	background: #1a1a1a;
+#waybar {
+  background: transparent;
+  color: #eeeeef;
+  font-size: 18px;
+  font-family: "monospace";
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+  padding: 0 5px;
+  color: #eeeeef;
 }
-#workspaces button.focused {
-	color: #268bd2;
+/* Fix: active workspace doesn't show up */
+/* #workspaces button.focused { */
+#workspaces button.active {
+  color: #fa5aa4;
 }
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+
+#custom-powermenu,
+#cpu,
+#tray,
+#battery,
+#memory,
+#workspaces,
+#clock,
+#window,
+#pulseaudio,
+#custom-updates,
+#network {
+  border: 1px solid #30C0EF;
+  padding: 4px 8px;
+  background-color: #1C1C1E;
+  border-radius: 30px;
+  margin: 6px 4px;
 }
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+
+#window {
+  /*color: #929db1; */
+  color: #eeeeef;
+}
+
+#tray {
+  margin-left: 4px;
+}
+
+#custom-updates {
+  color: #1788e4;
+}
+
+#custom-powermenu {
+  color: #e06c75;
+  padding-right: 11px;
+  margin-right: 8px;
+}
+
+#scratchpad {
+  color: #cffafe;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 #pulseaudio {
-	color: #268bd2;
-}
-#memory {
-	color: #2aa198;
-}
-#cpu {
-	color: #6c71c4;
-}
-#battery {
-	color: #859900;
-}
-#disk {
-	color: #b58900;
+  color: #0fb9b1;
+  padding-right: 14px;
 }
 
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk {
-	padding: 0 10px;
+#cpu {
+  color: #61afef;
+}
+
+#battery {
+  color: #98c379;
+}
+
+#memory {
+  color: #e5c07b;
+}
+
+#network {
+  color: #c678dd;
+  min-width: 200px;
+}
+
+#clock {
+  color: #fff;
+  margin-left: 8px;
+  /* opacity: 0.7; */
+  /* font-size: 18px; */
 }
