@@ -4,15 +4,13 @@
     "margin-bottom": 0,
     "modules-left": [
       "hyprland/workspaces",
-      "sway/workspaces",
       ],
     "modules-center": [
       "hyprland/window",
       ],
     "modules-right": [
+      "network",
       "battery",
-      "network#1",
-      "network#2",
      // "memory",
      // "cpu",
       "pulseaudio",
@@ -28,10 +26,12 @@
     "hyprland/window": {
       "format": " {}",
       "rewrite": {
-          "(\\d\\. )?(.*) - Google Chrome": "<span color=\"#4285F4\"></span>  $2 ",
-          "(\\d\\. )?(.*)ranger": "<span color=\"#ffffff\"></span>  $1",
-          "(\\d\\. )?(.*)Alacritty (.*)": "<span color=\"#ffffff\"></span>  $1",
-          "(\\d\\. )?(.*)kitty": "<span color=\"#ffffff\"></span>  $1",
+          "(\\d\\. )?(.*) - Chromium": "<span color=\"#4285F4\"></span>  $2 ",
+          "nvim (.*)": "<span color=\"#57A143\"></span>  $1",
+          "nvim": "<span color=\"#57A143\">  Neovim</span> ",
+          "ranger(.*)": "<span color=\"#ffffff\"></span>  $1",
+          "alacritty (.*)": "<span color=\"#ffffff\"></span>  $1",
+          "Search(.*)": "<span color=\"#a855f7\"></span>  Search$1",
       },
       "separate-outputs": false
     },
@@ -61,20 +61,11 @@
 		//        "default": ""
 	        }
     }, 
-    "network#1": {
+    "network": {
       "interface": "wlp0s20f3",
       "tooltip-format-ethernet": "{ifname} ",
       "interval": 2,
-      "format": " {ipaddr}",
-      "on-click": "exec nm-connection-editor",
-      //"format": " {bandwidthDownBits}  {bandwidthUpBits}",
-    },
-    "network#2": {
-      "interface": "enp0s13f0u3u4u4",
-      "tooltip-format-ethernet": "{ifname} ",
-      "interval": 2,
-      "format": "󰈀 {ipaddr}",
-      "on-click": "exec nm-connection-editor",
+      "format": "{ipaddr}",
       //"format": " {bandwidthDownBits}  {bandwidthUpBits}",
     },
     "temperature": {
@@ -89,7 +80,7 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "{time}",
+    "format": "{capacity}% {icon} ",
     "format-icons": ["", "", "", "", ""]
     //"max-length": 25
     },
