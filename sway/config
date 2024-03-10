@@ -1,0 +1,245 @@
+# sway config van Paul van Schaik (2024)
+
+#-------------------- instellingen --------------------
+# Mod1 is de Alt toets en Mod4 is de "Windows" of Super toets.
+set $mod Mod4
+set $alt Mod1
+
+bindsym $alt+Shift+l output "eDP-1" enable ; output "LG Electronics LG HDR 4K 111NTCZ4H259" disable ; output "LG Electronics LG HDR 4K 201NTBK7R893" disable
+bindsym $alt+Shift+d output "eDP-1" disable ; output "LG Electronics LG HDR 4K 111NTCZ4H259" enable pos 0 0 ; output "LG Electronics LG HDR 4K 201NTBK7R893" enable pos 3840 0
+
+# Font voor WM
+#font MesloLGS NF 11
+font MesloLGS NF 8
+
+# rand om de vensters
+default_border pixel 2 
+smart_borders off
+gaps inner 15
+gaps outer 5
+
+# kleur
+client.focused #88c0d0 #88c0d0 #000088 #88c0d0
+client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
+client.urgent #bf616a #bf616a #000088 #bf616a
+
+# Venster niet activeren als de muis eroverheen beweegt 
+focus_follows_mouse yes
+
+# -------------------- sneltoetsen --------------------
+# Terminal
+bindsym $mod+Return exec kitty
+bindsym $mod+y exec kitty -e ranger
+
+# rofi starter
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+
+# alternatief voor alt-tab
+bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
+
+# sluit een venster, herstart sway, herlaad het config bestand
+bindsym $mod+q kill
+bindsym $mod+Shift+b restart
+bindsym $mod+b exec killall waybar && waybar
+bindsym $mod+Shift+c reload
+
+# afsluiten
+bindsym $mod+Shift+e exec "sway-nagbar -t warning -m 'Je drukte op de EXIT toetscombinatie. il je echt afmelden?' -B 'Yep, ik ben er klaar mee' 'sway-msg exit'"
+
+# volume toetsen
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# scherm brightness toesten
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# input zooi
+input "1739:52793:DLL09FF:01_06CB:CE39_Touchpad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+   }
+
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+   }
+
+input "DLL09FF:01 06CB:CE39 Mouse" {
+       dwt enabled
+       natural_scroll enabled
+   }
+bindgesture swipe:right workspace next
+bindgesture swipe:left workspace prev
+
+# venster vastpakken met muis en verplaatsten
+floating_modifier $mod
+
+# scratchpad
+bindsym $mod+Shift+m move scratchpad
+bindsym $mod+m scratchpad show
+
+# focus op venster (VIM toetsen)
+bindsym $mod+h focus left 
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# focus op venster (cursor toetsen)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# venster verplaatsten (VIM toetsen)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# venster verplaatsten (cursor toetsen)
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# splits containers horizontaal
+bindsym $mod+Shift+v split h
+
+# splits containers verticaal
+bindsym $mod+v split v
+
+# maak venster full screen
+bindsym $mod+Shift+f fullscreen toggle
+
+# container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# tiling of floating
+bindsym $mod+f floating toggle
+
+# focus op de tiling of de flaoting windows
+bindsym $mod+space focus mode_toggle
+
+# focus op het "parent" venster
+bindsym $mod+a focus parent
+
+# de verschillende workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace "1" output "LG Electronics LG HDR 4K 111NTCZ4H259"
+workspace "2" output "LG Electronics LG HDR 4K 111NTCZ4H259"
+workspace "3" output "LG Electronics LG HDR 4K 111NTCZ4H259"
+workspace "4" output "LG Electronics LG HDR 4K 111NTCZ4H259"
+workspace "5" output "LG Electronics LG HDR 4K 111NTCZ4H259"
+workspace "6" output "LG Electronics LG HDR 4K 201NTBK7R893"
+workspace "7" output "LG Electronics LG HDR 4K 201NTBK7R893"
+workspace "8" output "LG Electronics LG HDR 4K 201NTBK7R893"
+workspace "9" output "LG Electronics LG HDR 4K 201NTBK7R893"
+workspace "10" output "LG Electronics LG HDR 4K 201NTBK7R893"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+
+# breng de vensters in resize mode met $mod+r 
+mode "resize" {
+
+        # links (h) maakt een venster smaller
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        # omlaag (j) maakt een venster hoger
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        # omhoof (k) maakr een venster lager
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        # rechts (l) maakt een venster breder
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+
+        # uit resize mode 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+Shift+r mode "default"
+}
+
+
+# start resize mode
+bindsym $mod+Shift+r mode "resize"
+
+# venster op een vaste workspace
+for_window [class="google-chrome"] move to workspace $ws3, workspace $ws3
+for_window [class="Google-chrome"] move to workspace $ws3, workspace $ws3
+for_window [class="obsidian"] move to workspace $ws4, workspace $ws4
+for_window [class="Mailspring"] move to workspace $ws5, workspace $ws5
+for_window [class="Spotify"] move to workspace $ws8, workspace $ws8
+for_window [class="steamwebhelper"] move to workspace $ws8, workspace $ws8
+for_window [title="Steam"] move to workspace $ws8, workspace $ws8
+for_window [class="virt-manager"] move to workspace $ws9, workspace $ws9
+for_window [class="Virt-manager"] move to workspace $ws9, workspace $ws9
+for_window [class="org.remmina.Remmina"] move to workspace $ws6, workspace $ws6
+for_window [class="floating"] floating enabled
+for_window [title="Stream Deck UI"] floating enabled
+for_window [title="WhatsApp Web"] move scratchpad
+
+# Speedkeys voor eigen configs
+bindsym $alt+Return exec kitty --class floating
+bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev
+bindsym $mod+Shift+s exec wl-copy < $(grimshot save area ~/Pictures/Screenshots/screenshot_$(date +%m%d%Y_%H%M%S).png)
+
+# mijn eigen start scripts
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec --no-startup-id "sh -c 'sleep 10; exec sway-msg restart'"
+exec --no-startup-id gnome-keyring-daemon -d 
+exec --no-startup-id waybar
+exec --no-startup-id swww init
+exec --no-startup-id nm-applet
+exec_always /home/paul/.local/bin/autotiling
+exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec --no-startup-id export QT_QPA_PLATFORMTHEME=qt6ct
+exec --no-startup-id export GDK_BACKEND=wayland,x11
+exec --no-startup-id export QT_QPA_PLATFORM="wayland;xcb"
+exec --no-startup-id export XDG_CURRENT_DESKTOP=sway
+exec --no-startup-id export XDG_SESSION_TYPE=wayland
+exec --no-startup-id export XDG_SESSION_DESKTOP=sway
+exec --no-startup-id export QT_WAYLAND_DISABLE_WINDOWDECORATION=1

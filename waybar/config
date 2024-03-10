@@ -4,10 +4,13 @@
     "margin-bottom": 0,
     "modules-left": [
       "hyprland/workspaces",
+      "hyprland/submap",
       "sway/workspaces",
+      "sway/mode",
       ],
     "modules-center": [
       "hyprland/window",
+      "sway/window",
       ],
     "modules-right": [
       "battery",
@@ -18,9 +21,22 @@
       "pulseaudio",
       "clock",
       "tray",
-      "custom/desktopmonitors",
+      // "custom/desktopmonitors",
       "custom/powermenu",
     ],
+    "sway/mode": {
+    "format": " {}",
+    "max-length": 50
+    },
+    "sway/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "rewrite": {
+       "(.*) - Google Chrome": "🌎 $1",
+       "(.*) - vim": " $1",
+       "(.*) - zsh": " [$1]"
+       }
+    },
     "tray": {
       "icon-size": 24,
       "spacing": 10
@@ -39,6 +55,24 @@
       "format": "✌️ {}",
       "max-length": 8,
       "tooltip": true
+    },
+    "sway/workspaces": {
+        "format": "{name}:{icon} ",
+        "format-window-separator": " | ",
+        "format-icons": {
+		        "1": "",
+		        "2": "",
+		        "3": "",
+		        "4": "",
+		        "5": "",
+		        "6": "",
+		        "7": "",
+		        "8": "󰝚",
+		        "9": "",
+		        "10": ""
+		//        "active": "",
+		//        "default": ""
+	        },
     },
     "hyprland/workspaces": {
         "format": "{name}:{icon} ",
