@@ -73,6 +73,12 @@ input "DLL09FF:01 06CB:CE39 Mouse" {
        dwt enabled
        natural_scroll enabled
    }
+
+input "1133:16514:Logitech_MX_Master_3" {
+       dwt enabled
+       natural_scroll enabled
+   }
+
 bindgesture swipe:right workspace next
 bindgesture swipe:left workspace prev
 
@@ -228,7 +234,7 @@ bindsym $mod+Shift+s exec wl-copy < $(grimshot save area ~/Pictures/Screenshots/
 
 # mijn eigen start scripts
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-exec --no-startup-id "sh -c 'sleep 10; exec sway-msg restart'"
+#exec --no-startup-id "sh -c 'sleep 10; exec swaymsg restart'"
 exec --no-startup-id gnome-keyring-daemon -d 
 exec --no-startup-id waybar
 exec --no-startup-id swww init
