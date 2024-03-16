@@ -6,10 +6,10 @@
   padding: 0;
 }
 #waybar {
-  /* background: transparent; */
+  background: transparent; 
   border: 0px solid #30C0EF;
   border-radius: 0px;
-  background: #1C1C1E;
+  /* background: #1C1C1E; */
   color: #eeeeef;
   font-size: 18px;
   font-family: "monospace";
@@ -25,9 +25,9 @@
   color: #30C0EF;
 }
 
-#workspaces button.focused {
+/* #workspaces button.focused {
   color: #30C0EF;
-}
+} */
 
 #custom-powermenu,
 #custom-desktopmonitors,
@@ -41,8 +41,18 @@
 #pulseaudio,
 #custom-updates,
 #network {
-  border: 0px solid #30C0EF;
+  border: 1px solid #30C0EF;
   padding: 4px 8px;
+  /* background-color: #1C1C1E; */
+  background-color: #1C1C1E;
+  border-radius: 10px;
+  margin: 3px 3px;
+}
+
+#submap {
+  border: 2px solid #C71212;
+  padding: 4px 8px;
+  /* background-color: #1C1C1E; */
   background-color: #1C1C1E;
   border-radius: 10px;
   margin: 3px 3px;

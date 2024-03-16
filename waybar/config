@@ -4,11 +4,11 @@
     "margin-bottom": 0,
     "modules-left": [
       "hyprland/workspaces",
-      "hyprland/submap",
       "sway/workspaces",
       "sway/mode",
       ],
     "modules-center": [
+      "hyprland/submap",
       "hyprland/window",
       "sway/window",
       ],
@@ -49,11 +49,11 @@
           "(\\d\\. )?(.*)Alacritty (.*)": "<span color=\"#ffffff\"></span>  $1",
           "(\\d\\. )?(.*)kitty": "<span color=\"#ffffff\"></span>  $1",
       },
-      "separate-outputs": false
+      "separate-outputs": true
     },
     "hyprland/submap": {
-      "format": "✌️ {}",
-      "max-length": 8,
+      "format": "{}",
+      //"max-length": 8,
       "tooltip": true
     },
     "sway/workspaces": {
@@ -125,8 +125,9 @@
         "warning": 30,
         "critical": 15
     },
-    "format": "{time}",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{icon} {time} ",
+    "format-icons": ["", "", "", "", ""],
+    "format-full": "{icon} full",
     //"max-length": 25
     },
     "memory": {
@@ -147,8 +148,8 @@
       "on-click": "exec ~/scripts/desktopmonitors",
     },
     "pulseaudio": {
-      "format": "{volume}% {icon}",
-      "format-bluetooth": "{volume}% {icon}",
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}%",
       "format-muted": "",
       "format-icons": {
           "headphone": "",
@@ -163,8 +164,8 @@
       "on-click": "pavucontrol"
     },
     "clock": {
-      //"format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
-      "format": "{:%H:%M}",
+      "format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
+      //"format": "{:%H:%M}",
       "interval": 60,
       "tooltip": true,
       "tooltip-format": "{:%d %B %H:%M}"
