@@ -44,10 +44,10 @@
     "hyprland/window": {
       "format": " {}",
       "rewrite": {
-          "(\\d\\. )?(.*) - Google Chrome": "<span color=\"#4285F4\"></span>  $2 ",
-          "(\\d\\. )?(.*)ranger": "<span color=\"#ffffff\"></span>  $1",
-          "(\\d\\. )?(.*)Alacritty (.*)": "<span color=\"#ffffff\"></span>  $1",
-          "(\\d\\. )?(.*)kitty": "<span color=\"#ffffff\"></span>  $1",
+          "(\\d\\. )?(.*) - Google Chrome": "<span color=\"#4285F4\"></span> $2",
+          "(\\d\\. )?(.*)ranger": "<span color=\"#ffffff\"></span> $1",
+          "(\\d\\. )?(.*)Alacritty (.*)": "<span color=\"#ffffff\"></span> $1",
+          "(\\d\\. )?(.*)kitty": "<span color=\"#ffffff\"></span> $1",
       },
       "separate-outputs": true
     },
