@@ -1,2 +1,14 @@
 
+//@theme "/home/paul/.local/share/rofi/themes/rounded-blue-dark.rasi"
+
+//@theme "/home/paul/.local/share/rofi/themes/nord-twoLines.rasi"
+
+//@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
+
+//@theme "/home/paul/.local/share/rofi/themes/windows11-grid-dark.rasi"
+
+//@theme "/usr/share/rofi/themes/fullscreen-preview.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
 @theme "/home/paul/.local/share/rofi/themes/rounded-blue-dark.rasi"

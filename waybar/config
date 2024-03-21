@@ -128,6 +128,7 @@
     "format": "{icon} {time} ",
     "format-icons": ["", "", "", "", ""],
     "format-full": "{icon} full",
+    "format-charging": " {time}",
     //"max-length": 25
     },
     "memory": {
