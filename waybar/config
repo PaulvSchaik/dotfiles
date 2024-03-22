@@ -6,6 +6,7 @@
       "hyprland/workspaces",
       "sway/workspaces",
       "sway/mode",
+      "custom/spotify",
       ],
     "modules-center": [
       "hyprland/submap",
@@ -118,6 +119,16 @@
       "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
       "critical-threshold": 80,
       "format-icons": ["", "", ""]
+    },
+     "custom/spotify": {
+       "interval": 1,
+       "return-type": "json",
+       "exec": "waybar_media_display",
+       "exec-if": "pgrep spotify",
+       "on-click":"playerctl --player=spotify play-pause",
+       "on-scroll-up": "playerctl --player=spotify next",
+       "on-scroll-down": "playerctl --player=spotify previous",
+       "escape": true
     },
     "battery": {
     "interval": 60,

@@ -32,11 +32,13 @@
 #custom-powermenu,
 #custom-desktopmonitors,
 #cpu,
+#custom-spotify,
 #tray,
 #memory,
 #workspaces,
 #clock,
 #window,
+#battery,
 #pulseaudio,
 #custom-updates,
 #network {
@@ -51,6 +53,7 @@
 #battery.full {
   background-color: transparent;
   color: transparent;
+  border: 0px solid;
 }
 
 #submap {
