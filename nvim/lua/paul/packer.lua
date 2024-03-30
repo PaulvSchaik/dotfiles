@@ -40,7 +40,8 @@ return require('packer').startup(function(use)
         "epwalsh/obsidian.nvim",
         tag = "*",})
     use 'nvim-tree/nvim-tree.lua'
-    use 'tpope/vim-dadbod'
-    use 'kristijanhusak/vim-dadbod-ui'
-    use 'kristijanhusak/vim-dadbod-completion'
+    --- testing
+    use 'folke/noice.nvim'
+    use 'MunifTanjim/nui.nvim'
+    use 'rcarriga/nvim-notify'
     end)
