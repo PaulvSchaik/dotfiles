@@ -1,5 +1,4 @@
 vim.opt.guicursor = ""
---vim.cmd('colorscheme flexoki-dark')
 vim.cmd('colorscheme carbonfox')
 
 vim.opt.nu = true
@@ -12,6 +11,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 --vim.opt.colorcolumn = '80'
 vim.opt.wrap = on

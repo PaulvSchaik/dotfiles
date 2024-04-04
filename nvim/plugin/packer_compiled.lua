@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/paul/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  flexoki = {
-    loaded = true,
-    path = "/home/paul/.local/share/nvim/site/pack/packer/start/flexoki",
-    url = "https://github.com/kepano/flexoki-neovim"
-  },
   harpoon = {
     loaded = true,
     path = "/home/paul/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -143,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/paul/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/paul/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

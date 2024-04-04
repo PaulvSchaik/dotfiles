@@ -153,7 +153,7 @@
     "custom/powermenu": {
       "format": "",
       "tooltip": false,
-      "on-click": "exec wlogout",
+      "on-click": "/home/paul/scripts/uitzetten.sh",
     },
     "custom/desktopmonitors": {
       "format": "󰨇",

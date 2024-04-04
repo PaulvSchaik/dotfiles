@@ -2,18 +2,16 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use('wbthomason/packer.nvim')
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.6',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use({ 'kepano/flexoki-neovim', as = 'flexoki' })
-
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('ThePrimeagen/harpoon')
-	use('mbbill/undotree')
+    -- Packer can manage itself
+    use('wbthomason/packer.nvim')
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('ThePrimeagen/harpoon')
+    use('mbbill/undotree')
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -39,9 +37,9 @@ return require('packer').startup(function(use)
     use({
         "epwalsh/obsidian.nvim",
         tag = "*",})
-    use 'nvim-tree/nvim-tree.lua'
-    --- testing
-    use 'folke/noice.nvim'
-    use 'MunifTanjim/nui.nvim'
-    use 'rcarriga/nvim-notify'
+        use 'nvim-tree/nvim-tree.lua'
+        --- testing
+        use 'folke/noice.nvim'
+        use 'MunifTanjim/nui.nvim'
+    --    use 'rcarriga/nvim-notify'
     end)
