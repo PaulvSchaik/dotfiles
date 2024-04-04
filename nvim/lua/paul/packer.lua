@@ -41,5 +41,5 @@ return require('packer').startup(function(use)
         --- testing
         use 'folke/noice.nvim'
         use 'MunifTanjim/nui.nvim'
-    --    use 'rcarriga/nvim-notify'
+        --        use 'rcarriga/nvim-notify'
     end)
