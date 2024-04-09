@@ -3,7 +3,7 @@
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
-  "control-center-layer": "overlay",
+  "control-center-layer": "top",
   "layer-shell": true,
   "cssPriority": "application",
   "control-center-margin-top": 10,
@@ -26,7 +26,7 @@
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "hide-on-action": true,
   "script-fail-notify": true,
   "scripts": {
@@ -48,24 +48,75 @@
     }
   },
   "widgets": [
+    "menubar",
+    "backlight",
+    "volume",
     "inhibitors",
     "title",
+    "buttons-grid",
     "dnd",
+    "mpris",
     "notifications"
   ],
   "widget-config": {
     "inhibitors": {
       "text": "Inhibitors",
-      "button-text": "Clear All",
+      "button-text": "Leegmaken",
       "clear-all-button": true
     },
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "Leegmaken"
+    },
+        "backlight": {
+      "label": "🔆",
+      "device": "intel_backlight",
+      "min": 1
+    },
+    "volume": {
+      "label": "🔊"
+    },
+    "menubar": {
+      "menu#power-buttons": {
+        "label": "",
+        "position": "right",
+        "actions": [
+          {
+            "label": "   Herstart",
+            "command": "systemctl reboot"
+          },
+          {
+            "label": "   Lock",
+            "command": "gtklock -i"
+          },
+          {
+            "label": "   Logout",
+            "command": "hyprctl dispatch exit"
+          },
+          {
+            "label": "   Slaapstand",
+            "command": "systemctl suspend"
+          },
+          {
+            "label": "   Uitschakelen",
+            "command": "/home/paul/scripts/uitzetten"
+          }
+        ]
+      },
+      "menu#dotfiles-buttons": {
+        "label": "󰖟 ",
+        "position": "left",
+        "actions": [
+          {
+            "label": "  Youtube",
+            "command": "firefox https://youtube.com"
+          }
+        ]
+      }
     },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "Meldingen uit"
     },
     "label": {
       "max-lines": 5,
@@ -77,12 +128,29 @@
     },
     "buttons-grid": {
       "actions": [
+           {
+          "label": " ",
+          "command": "kitty --class floating_kitty -e nmtui"
+        },
         {
-          "label": "直",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "label": "",
+          "command": "kitty --class floating_kitty -e bluetuith"
+        },
+        {
+          "label": "󰎞",
+          "command": "flatpak run md.obsidian.Obsidian"
+         },
+        {
+          "label": "",
+          "command": "flatpak run com.spotify.Client"
+        },
+        {
+          "label": "",
+          "command": "pavucontrol"
+        },
+        {
+          "label": "",
+          "command": "firefox"
         }
       ]
     }

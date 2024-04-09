@@ -4,9 +4,9 @@
     "margin-bottom": 0,
     "modules-left": [
         "hyprland/workspaces",
+     // "custom/spotify",
         "sway/workspaces",
         "sway/mode",
-        "custom/spotify",
         ],
     "modules-center": [
         "hyprland/submap",
@@ -18,12 +18,12 @@
         "network#1",
         "network#2",
      // "memory",
-    // "cpu",
-        "pulseaudio",
+     // "cpu",
+     // "pulseaudio",
         "clock",
         "tray",
      // "custom/desktopmonitors",
-        "custom/powermenu",
+     // "custom/powermenu",
         "custom/notification",
         ],
     "sway/mode": {
