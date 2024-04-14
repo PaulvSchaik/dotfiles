@@ -22,8 +22,8 @@ smart_borders off
 gaps inner 15
 gaps outer 5
 
-# kleur
-client.focused #30C0EF #30C0EF #000088 #30C0EF
+# kleur (client.<status> #<border> #<achtergrond> #<tekst> #<nieuw-venster-locatie> #<child-border>)
+client.focused #30C0EF #30C0EF #000088 #30EFAC
 client.focused_inactive #2C2C2C #2C2C2C #ffffff #2C2C2C
 client.unfocused #2C2C2C #2C2C2C #ffffff #2C2C2C
 client.urgent #bf616a #bf616a #000088 #bf616a
@@ -48,8 +48,8 @@ bindsym $mod+Shift+b restart
 bindsym $mod+b exec killall waybar && waybar
 bindsym $mod+Shift+c reload
 
-# afsluiten
-bindsym $mod+Shift+e exec "sway-nagbar -t warning -m 'Je drukte op de EXIT toetscombinatie. il je echt afmelden?' -B 'Yep, ik ben er klaar mee' 'sway-msg exit'"
+# afsluiten (de ouderweste manier, ik houd niet van swaynag, dus gebruik het niet.
+#bindsym $mod+Shift+e exec "swaynag -t warning -m 'Je drukte op de EXIT toetscombinatie. il je echt afmelden?' -B 'Yep, ik ben er klaar mee' 'sway-msg exit'"
 
 # volume toetsen
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
@@ -190,6 +190,13 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $alt+Shift+1 move container to workspace number $ws11
 
+# moving workspaces
+
+bindsym $mod+Control+Left move workspace to output "LG Electronics LG HDR 4K 111NTCZ4H259"
+bindsym $mod+Control+Right move workspace to output "LG Electronics LG HDR 4K 201NTBK7R893"
+
+bindsym $mod+Control+h move workspace to output "LG Electronics LG HDR 4K 111NTCZ4H259"
+bindsym $mod+Control+l move workspace to output "LG Electronics LG HDR 4K 201NTBK7R893"
 
 # breng de vensters in resize mode met $mod+r 
 mode "resize" {
@@ -200,7 +207,7 @@ mode "resize" {
         # omlaag (j) maakt een venster hoger
         bindsym j resize grow height 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
-        # omhoog (k) maakr een venster lager
+        # omhoog (k) maakt een venster lager
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         # rechts (l) maakt een venster breder
@@ -218,17 +225,18 @@ mode "resize" {
 # start resize mode
 bindsym $mod+Shift+r mode "resize"
 
-# venster op een vaste workspace
-for_window [class="google-chrome"] move to workspace $ws3, workspace $ws3
-for_window [class="Google-chrome"] move to workspace $ws3, workspace $ws3
-for_window [class="obsidian"] mark "obsidian", move to workspace $ws7, workspace $ws7
-for_window [class="Spotify"] move to workspace $ws8, workspace $ws8
-for_window [class="steamwebhelper"] move to workspace $ws8, workspace $ws8
+# venster op een vaste workspace (window rules)
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
+for_window [app_id="google-chrome"] move to workspace $ws3, workspace $ws3
+for_window [app_id="obsidian"] mark "obsidian", move to workspace $ws7, workspace $ws7
+for_window [app_id="Spotify"] move to workspace $ws8, workspace $ws8
+for_window [app_id="steamwebhelper"] move to workspace $ws8, workspace $ws8
 for_window [title="Steam"] move to workspace $ws8, workspace $ws8
-for_window [class="virt-manager"] move to workspace $ws9, workspace $ws9
-for_window [class="Virt-manager"] move to workspace $ws9, workspace $ws9
-for_window [class="org.remmina.Remmina"] move to workspace $ws9, workspace $ws9
-for_window [class="floating"] floating enabled
+for_window [app_id="virt-manager"] move to workspace $ws9, workspace $ws9
+for_window [app_id="Virt-manager"] move to workspace $ws9, workspace $ws9
+for_window [app_id="org.remmina.Remmina"] move to workspace $ws9, workspace $ws9
+for_window [app_id="floating"] floating enabled, resize set width 30% height 25%
+for_window [app_id="thunderbird"] move to workspace $ws6, floating enabled
 for_window [title="Stream Deck UI"] floating enabled
 for_window [title="WhatsApp Web"] mark "whatsapp"
 
@@ -236,7 +244,7 @@ for_window [title="WhatsApp Web"] mark "whatsapp"
 bindsym $alt+Return exec kitty --class floating
 bindsym $mod+period workspace next
 bindsym $mod+comma workspace prev
-bindsym $mod+Shift+s exec wl-copy < $(grimshot save area ~/Pictures/Screenshots/screenshot_$(date +%m%d%Y_%H%M%S).png)
+bindsym $mod+Shift+s exec wl-copy < $(grimshot save area ~/Afbeeldingen/Screenshots/screenshot_$(date +%m%d%Y_%H%M%S).png)
 
 # schakelen tussen gemarkeerd venster (mark)
 bindsym $mod+Ctrl+w [con_mark="whatsapp"] focus
@@ -244,23 +252,24 @@ bindsym $mod+Ctrl+o [con_mark="obsidian"] focus
 
 
 # mijn eigen start scripts
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-#exec --no-startup-id "sh -c 'sleep 10; exec swaymsg restart'"
-exec --no-startup-id gnome-keyring-daemon -d 
-exec --no-startup-id waybar
-exec --no-startup-id swww-daemon
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+#exec "sh -c 'sleep 10; exec swaymsg restart'"
+exec gnome-keyring-daemon -d 
+exec waybar
+exec swww-daemon
 exec_always /home/paul/.local/bin/autotiling
 #exec_always /home/paul/scripts/clamshell-always
-exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec --no-startup-id export QT_QPA_PLATFORMTHEME=qt5ct
-exec --no-startup-id export GDK_BACKEND=wayland
-#exec --no-startup-id export GDK_BACKEND=wayland,x11
-exec --no-startup-id export QT_QPA_PLATFORM="wayland;xcb"
-exec --no-startup-id export XDG_CURRENT_DESKTOP=sway
-exec --no-startup-id export XDG_SESSION_TYPE=wayland
-exec --no-startup-id export XDG_SESSION_DESKTOP=sway
-exec --no-startup-id export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec export GTK_THEME=Adwaita
+exec_always gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+exec export QT_QPA_PLATFORMTHEME=qt5ct
+exec export GDK_BACKEND=wayland,x11
+exec export QT_QPA_PLATFORM="wayland;xcb"
+exec export XDG_CURRENT_DESKTOP=sway
+exec export XDG_SESSION_TYPE=wayland
+exec export XDG_SESSION_DESKTOP=sway
+exec export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 # niet in gebruik maar bied wel leuke use-cases
 #bindsym $mod+Shift+Ctrl+1 mark "sp1", move scratchpad
