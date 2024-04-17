@@ -30,45 +30,65 @@
   color: #30C0EF;
 }
 
-#custom-powermenu,
-#custom-desktopmonitors,
-#custom-notification,
-#cpu,
-#custom-spotify,
-#tray,
-#memory,
-#workspaces,
-#clock,
-#window,
-#battery,
-#pulseaudio,
-#custom-updates,
-#network {
+#one {
   border: 0px solid #30C0EF;
   padding: 4px 9px;
-  /* background-color: #1C1C1E; */
   background-color: #1C1C1E;
   border-radius: 10px;
   margin: 3px 3px;
 }
 
+/*
+#tray,
+#clock,
+#battery,
+*/
+#custom-powermenu,
+#custom-desktopmonitors,
+#cpu,
+#custom-spotify,
+#memory,
+#workspaces,
+#window,
+#pulseaudio,
+#custom-updates,
+#network {
+  border: 0px solid #30C0EF;
+  padding: 4px 9px;
+  background-color: #1C1C1E;
+  border-radius: 10px;
+  margin: 3px 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#custom-notification {
+  margin-right: 8px;
+  margin-left: 8px;
+}
 #battery.critical {
   background-color: #C71212;
   color: #eeeeef;
   border: 2px solid #eeeeef;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #battery.warning {
   background-color: #e5c07b;
   color: #1C1C1E;
   border: 2px solid #1C1C1E;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
+/*
 #battery.full {
   background-color: transparent;
   color: transparent;
   border: 0px solid;
 }
+*/
 
 #submap {
   border: 2px solid #C71212;
@@ -85,7 +105,8 @@
 }
 
 #tray {
-  margin-left: 4px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #custom-updates {
@@ -96,44 +117,54 @@
   color: #e06c75;
   padding-right: 11px;
   margin-right: 8px;
+  margin-left: 8px;
 }
 
 #custom-desktopmonitors {
   color: #1788e4;
   padding-right: 11px;
   margin-right: 8px;
+  margin-left: 8px;
 }
 
 #scratchpad {
   color: #cffafe;
   padding-right: 4px;
   padding-left: 4px;
+  margin-left: 8px;
 }
 
 #pulseaudio {
   color: #0fb9b1;
   padding-right: 14px;
+  margin-left: 8px;
 }
 
 #cpu {
   color: #61afef;
+  margin-left: 8px;
 }
 
 #battery {
   color: #98c379;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #memory {
   color: #e5c07b;
+  margin-left: 8px;
 }
 
 #network {
   color: #c678dd;
+  margin-left: 8px;
 /*  min-width: 200px; */
 }
 
 #clock {
   color: #fff;
+  margin-right: 8px;
   margin-left: 8px;
   /* opacity: 0.7; */
   /* font-size: 18px; */

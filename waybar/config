@@ -2,18 +2,27 @@
     "layer": "top",
     "position": "top",
     "margin-bottom": 0,
+
     "modules-left": [
         "hyprland/workspaces",
      // "custom/spotify",
         "sway/workspaces",
         "sway/mode",
         ],
+
     "modules-center": [
         "hyprland/submap",
         "hyprland/window",
         "sway/window",
         ],
+
     "modules-right": [
+        "group/one"
+        ],
+
+    "group/one": {
+        "orientation": "horizontal",
+        "modules": [
         "battery",
      // "network#1",
      // "network#2",
@@ -25,7 +34,9 @@
      // "custom/desktopmonitors",
      // "custom/powermenu",
         "custom/notification",
-        ],
+        ]
+    },
+
     "sway/mode": {
         "format": " {}",
         "max-length": 50
@@ -159,7 +170,7 @@
             },
             "format": "{icon} {time} ",
             "format-icons": ["", "", "", "", ""],
-            "format-full": "{icon} full",
+            "format-full": " ",
             "format-charging": " ",
             "format-critical": " PLEASE CHARGE !  {time}",
             //"max-length": 25
@@ -198,8 +209,8 @@
             "on-click": "pavucontrol"
         },
         "clock": {
-            "format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
-            //"format": "{:%H:%M}",
+            //"format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
+            "format": "{:%H:%M}",
             "interval": 60,
             "tooltip": true,
             "tooltip-format": "{:%d %B %H:%M}"
