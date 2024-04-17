@@ -5,7 +5,6 @@
 
     "modules-left": [
         "hyprland/workspaces",
-     // "custom/spotify",
         "sway/workspaces",
         "sway/mode",
         ],
@@ -14,6 +13,7 @@
         "hyprland/submap",
         "hyprland/window",
         "sway/window",
+        "hyprland/submap",
         ],
 
     "modules-right": [
@@ -24,15 +24,8 @@
         "orientation": "horizontal",
         "modules": [
         "battery",
-     // "network#1",
-     // "network#2",
-     // "memory",
-     // "cpu",
-     // "pulseaudio",
         "clock",
         "tray",
-     // "custom/desktopmonitors",
-     // "custom/powermenu",
         "custom/notification",
         ]
     },
@@ -41,6 +34,7 @@
         "format": " {}",
         "max-length": 50
         },
+
     "sway/window": {
         "format": "{title}",
         "max-length": 50,
@@ -50,10 +44,12 @@
             "(.*) - zsh": " [$1]"
             }
         },
+
         "tray": {
             "icon-size": 24,
             "spacing": 10
         },
+
         "hyprland/window": {
             "format": " {}",
             "rewrite": {
@@ -64,11 +60,12 @@
             },
             "separate-outputs": true
         },
+
         "hyprland/submap": {
             "format": "{}",
-            //"max-length": 8,
             "tooltip": true
         },
+
         "custom/notification": {
             "tooltip": false,
             "format": "{icon}",
@@ -89,6 +86,7 @@
             "on-click-right": "swaync-client -d -sw",
             "escape": true
         },
+
         "sway/workspaces": {
             "format": "{name}:{icon} ",
             "format-window-separator": " | ",
@@ -107,9 +105,9 @@
                     //        "default": ""
             },
         },
+
         "hyprland/workspaces": {
             "format": "{name}:{icon} ",
-            //"format": "{icon} ",
             "on-scroll-up": "hyprctl dispatch workspace e+1",
             "on-scroll-down": "hyprctl dispatch workspace e-1",
             "show-special": false,
@@ -124,90 +122,23 @@
                 "8": "󰝚",
                 "9": "",
                 "10": ""
-                    //        "active": "",
-                    //        "default": ""
             }
         }, 
-        "network#1": {
-            "interface": "wlp0s20f3",
-            "tooltip-format-ethernet": "{ifname} ",
-            "interval": 2,
-            "format": " {ipaddr}",
-            "format-disconnected": " disconnected",
-            "on-click": "exec nm-connection-editor",
-            //"format": " {bandwidthDownBits}  {bandwidthUpBits}",
-        },
-        "network#2": {
-            "interface": "enp0s13f0u3u4u4",
-            "tooltip-format-ethernet": "{ifname} ",
-            "interval": 2,
-            "format": "󰈀 {ipaddr}",
-            "format-disconnected": "󰈀 disconnected",
-            "on-click": "exec nm-connection-editor",
-            //"format": " {bandwidthDownBits}  {bandwidthUpBits}",
-        },
-        "temperature": {
-            "format": "{icon} {temperatureC}°C",
-            "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-            "critical-threshold": 80,
-            "format-icons": ["", "", ""]
-        },
-        "custom/spotify": {
-            "interval": 1,
-            "return-type": "json",
-            "exec": "waybar_media_display",
-            "exec-if": "pgrep spotify",
-            "on-click":"playerctl --player=spotify play-pause",
-            "on-scroll-up": "playerctl --player=spotify next",
-            "on-scroll-down": "playerctl --player=spotify previous",
-            "escape": true
-        },
+  
         "battery": {
             "interval": 60,
             "states": {
-                "warning": 40,
-                "critical": 20
+                "warning": 30,
+                "critical": 15
             },
-            "format": "{icon} {time} ",
+            "format": "{icon} {capacity} ",
             "format-icons": ["", "", "", "", ""],
             "format-full": " ",
             "format-charging": " ",
-            "format-critical": " PLEASE CHARGE !  {time}",
-            //"max-length": 25
+            "format-warning": "battery low ",
+            "format-critical": " PLEASE CHARGE !  {capacity}",
         },
-        "memory": {
-            "format": " {}%",
-            "tooltip": "false"
-        },
-        "cpu": {
-            "format": " {usage}%",
-            "tooltip": "false"
-        },
-        "custom/powermenu": {
-            "format": "",
-            "tooltip": false,
-            "on-click": "/home/paul/scripts/uitzetten.sh",
-        },
-        "custom/desktopmonitors": {
-            "format": "󰨇",
-            "on-click": "exec ~/scripts/desktopmonitors",
-        },
-        "pulseaudio": {
-            "format": "{icon} {volume}%",
-            "format-bluetooth": "{icon} {volume}%",
-            "format-muted": "",
-            "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", ""]
-            },
-            "scroll-step": 1,
-            "on-click": "pavucontrol"
-        },
+
         "clock": {
             //"format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
             "format": "{:%H:%M}",

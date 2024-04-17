@@ -20,8 +20,7 @@
   padding: 0 5px;
   color: #eeeeef;
 }
-/* Fix: active workspace doesn't show up */
-/* #workspaces button.focused { */
+
 #workspaces button.active {
   color: #30C0EF;
 }
@@ -38,11 +37,6 @@
   margin: 3px 3px;
 }
 
-/*
-#tray,
-#clock,
-#battery,
-*/
 #custom-powermenu,
 #custom-desktopmonitors,
 #cpu,
@@ -82,25 +76,16 @@
   margin-right: 8px;
 }
 
-/*
-#battery.full {
-  background-color: transparent;
-  color: transparent;
-  border: 0px solid;
-}
-*/
-
 #submap {
-  border: 2px solid #C71212;
+  border: 0px solid #C71212;
+  color: #eeeeef;
   padding: 4px 8px;
-  /* background-color: #1C1C1E; */
-  background-color: #1C1C1E;
+  background-color: transparent;
   border-radius: 10px;
   margin: 3px 3px;
 }
 
 #window {
-  /*color: #929db1; */
   color: #eeeeef;
 }
 
@@ -159,13 +144,10 @@
 #network {
   color: #c678dd;
   margin-left: 8px;
-/*  min-width: 200px; */
 }
 
 #clock {
   color: #fff;
   margin-right: 8px;
   margin-left: 8px;
-  /* opacity: 0.7; */
-  /* font-size: 18px; */
 }
