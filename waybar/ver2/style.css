@@ -5,15 +5,11 @@
   margin: 0;
   padding: 0;
 }
-
 #waybar {
-  border: 0px solid #30C0EF;
-  border-radius: 10px;
-  background: #323234;
+  background: transparent;
   color: #eeeeef;
   font-size: 18px;
   font-family: "monospace";
-  opacity: 0.8;
 }
 
 #workspaces button {
@@ -23,60 +19,26 @@
 /* Fix: active workspace doesn't show up */
 /* #workspaces button.focused { */
 #workspaces button.active {
-  color: #30C0EF;
-}
-
-#workspaces button.focused {
-  color: #30C0EF;
+  color: #fa5aa4;
 }
 
 #custom-powermenu,
 #custom-desktopmonitors,
-#custom-notification,
 #cpu,
-#custom-spotify,
 #tray,
+#battery,
 #memory,
 #workspaces,
 #clock,
 #window,
-#battery,
 #pulseaudio,
 #custom-updates,
 #network {
-  border: 0px solid #30C0EF;
-  padding: 4px 9px;
-  /* background-color: #1C1C1E; */
-  background-color: #1C1C1E;
-  border-radius: 10px;
-  margin: 3px 3px;
-}
-
-#battery.critical {
-  background-color: #C71212;
-  color: #eeeeef;
-  border: 2px solid #eeeeef;
-}
-
-#battery.warning {
-  background-color: #e5c07b;
-  color: #1C1C1E;
-  border: 2px solid #1C1C1E;
-}
-
-#battery.full {
-  background-color: transparent;
-  color: transparent;
-  border: 0px solid;
-}
-
-#submap {
-  border: 2px solid #C71212;
+  border: 1px solid #30C0EF;
   padding: 4px 8px;
-  /* background-color: #1C1C1E; */
   background-color: #1C1C1E;
-  border-radius: 10px;
-  margin: 3px 3px;
+  border-radius: 30px;
+  margin: 6px 4px;
 }
 
 #window {
@@ -129,7 +91,7 @@
 
 #network {
   color: #c678dd;
-/*  min-width: 200px; */
+  min-width: 200px;
 }
 
 #clock {

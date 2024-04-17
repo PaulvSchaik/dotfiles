@@ -15,8 +15,8 @@
         ],
     "modules-right": [
         "battery",
-     // "network#1",
-     // "network#2",
+        "network#1",
+        "network#2",
      // "memory",
      // "cpu",
      // "pulseaudio",
@@ -160,7 +160,7 @@
             "format": "{icon} {time} ",
             "format-icons": ["", "", "", "", ""],
             "format-full": "{icon} full",
-            "format-charging": " ",
+            "format-charging": " {time}",
             "format-critical": " PLEASE CHARGE !  {time}",
             //"max-length": 25
         },
