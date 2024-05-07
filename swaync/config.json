@@ -88,7 +88,7 @@
           },
           {
             "label": "   Lock",
-            "command": "gtklock -i"
+            "command": "hyprlock"
           },
           {
             "label": "   Logout",
@@ -130,11 +130,11 @@
       "actions": [
            {
           "label": " ",
-          "command": "kitty --class floating_kitty -e nmtui"
+          "command": "kitty -e nmtui"
         },
         {
           "label": "",
-          "command": "kitty --class floating_kitty -e bluetuith"
+          "command": "kitty -e bluetuith"
         },
         {
           "label": "󰎞",

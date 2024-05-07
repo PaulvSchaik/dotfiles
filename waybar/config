@@ -53,10 +53,11 @@
         "hyprland/window": {
             "format": " {}",
             "rewrite": {
-                "(\\d\\. )?(.*) - Google Chrome": "<span color=\"#4285F4\"></span> $2",
-                "(\\d\\. )?(.*)ranger": "<span color=\"#ffffff\"></span> $1",
-                "(\\d\\. )?(.*)Alacritty (.*)": "<span color=\"#ffffff\"></span> $1",
-                "(\\d\\. )?(.*)kitty": "<span color=\"#ffffff\"></span> $1",
+                "(\\d\\. )?(.*) - Google Chrome": "<span color=\"#33B1FF\">  </span>$2",
+                "(\\d\\. )?(.*)ranger": "<span color=\"#ffb86c\">  </span>ranger",
+                "(\\d\\. )?(.*)kitty": "<span color=\"#EE5396\">  </span>kitty",
+                "(\\d\\. )?(.*)WhatsApp Web": "<span color=\"#25BE6A\">  </span>WhatsApp",
+                "(\\d\\. )?(.*)Thunderbird": "<span color=\"#3ddbd9\">  </span>$2",
             },
             "separate-outputs": true
         },

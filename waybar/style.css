@@ -1,38 +1,52 @@
+@import url("./colors.css");
 * {
   border: none;
   border-radius: 0;
   min-height: 0;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 #waybar {
-  border: 0px solid #30C0EF;
-  border-radius: 10px;
-  background: #323234;
-  color: #eeeeef;
+  border: 0px solid @background;
+  border-radius: 0px;
+  background: @background;
+  color: @foreground;
   font-size: 18px;
   font-family: "monospace";
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+#workspaces {
+  padding: 3px 3px;
+  background-color: @background-darker;
+  border-radius: 10px;
+  margin: 3px 3px;
 }
 
 #workspaces button {
   padding: 0 5px;
-  color: #eeeeef;
+  color: @foreground;
 }
 
 #workspaces button.active {
-  color: #30C0EF;
+  color: @workspace;
 }
 
 #workspaces button.focused {
-  color: #30C0EF;
+  color: @workspace;
+}
+
+#window {
+  padding: 5px 5px;
+  background-color: @background-darker;
+  border-radius: 10px;
+  margin: 3px 3px;
 }
 
 #one {
-  border: 0px solid #30C0EF;
-  padding: 4px 9px;
-  background-color: #1C1C1E;
+  padding: 3px 3px;
+  background-color: @background-darker;
   border-radius: 10px;
   margin: 3px 3px;
 }
@@ -42,14 +56,11 @@
 #cpu,
 #custom-spotify,
 #memory,
-#workspaces,
-#window,
 #pulseaudio,
 #custom-updates,
 #network {
-  border: 0px solid #30C0EF;
-  padding: 4px 9px;
-  background-color: #1C1C1E;
+  border: 0px solid @cyan;
+  background-color: @background-darker;
   border-radius: 10px;
   margin: 3px 3px;
   margin-left: 8px;
@@ -61,32 +72,32 @@
   margin-left: 8px;
 }
 #battery.critical {
-  background-color: #C71212;
-  color: #eeeeef;
-  border: 2px solid #eeeeef;
+  background-color: @red;
+  color: @foreground;
+  border: 2px solid @foreground;
   margin-left: 8px;
   margin-right: 8px;
 }
 
 #battery.warning {
-  background-color: #e5c07b;
-  color: #1C1C1E;
-  border: 2px solid #1C1C1E;
+  background-color: @orange;
+  color: @background-darker;
+  border: 2px solid @background-darker;
   margin-left: 8px;
   margin-right: 8px;
 }
 
 #submap {
-  border: 0px solid #C71212;
-  color: #eeeeef;
-  padding: 4px 8px;
+  border: 0px solid @red;
+  color: @red;
   background-color: transparent;
   border-radius: 10px;
-  margin: 3px 3px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #window {
-  color: #eeeeef;
+  color: @foreground;
 }
 
 #tray {
@@ -95,59 +106,59 @@
 }
 
 #custom-updates {
-  color: #1788e4;
+  color: @pink;
 }
 
 #custom-powermenu {
-  color: #e06c75;
-  padding-right: 11px;
+  color: @purple;
   margin-right: 8px;
   margin-left: 8px;
 }
 
 #custom-desktopmonitors {
-  color: #1788e4;
-  padding-right: 11px;
+  color: @cyan;
   margin-right: 8px;
   margin-left: 8px;
 }
 
 #scratchpad {
-  color: #cffafe;
-  padding-right: 4px;
-  padding-left: 4px;
+  color: @comment;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 #pulseaudio {
-  color: #0fb9b1;
-  padding-right: 14px;
+  color: @green;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 #cpu {
-  color: #61afef;
+  color: @yellow;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 #battery {
-  color: #98c379;
+  color: @green;
   margin-right: 8px;
   margin-left: 8px;
 }
 
 #memory {
-  color: #e5c07b;
+  color: @orange;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 #network {
-  color: #c678dd;
+  color: @purple;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 #clock {
-  color: #fff;
+  color: @foreground;
   margin-right: 8px;
   margin-left: 8px;
 }

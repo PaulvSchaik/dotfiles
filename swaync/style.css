@@ -1,7 +1,7 @@
 @define-color cc-bg rgba(46, 46, 46, 1.0);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(50, 50, 52, 1.0);
-@define-color noti-bg-opaque rgb(50, 50, 52);
+@define-color noti-bg rgba(12, 12, 12, 0.9);
+@define-color noti-bg-opaque rgba(28, 28, 30, 1);
 @define-color noti-bg-darker rgb(38, 38, 38);
 @define-color noti-bg-hover rgb(56, 56, 56);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
@@ -261,7 +261,7 @@
 
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  background: rgba(28, 28, 30, 1);
+  background: rgba(22, 22, 22, 0.9);
   color: @text-color;
   border-radius: 12px;
 }
@@ -414,7 +414,8 @@
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
-  background-color: rgba(28, 28, 30, 1);
+  background-color: @noti-bg;
+  background: @noti-bg;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
@@ -456,7 +457,7 @@
 /* Volume widget */
 .widget-volume {
   /*background-color: @noti-bg;*/
-  background-color: rgba(28, 28, 30, 1);
+  background-color: @noti-bg;
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -477,9 +478,10 @@
 /* Backlight widget */
 .widget-backlight {
   /*background-color: @noti-bg;*/
-  background-color: rgba(28, 28, 30, 1);
+  background-color: @noti-bg;
   padding: 8px;
-  margin: 8px;
+  margin: 8px;:w
+
   border-radius: 12px;
 }
 

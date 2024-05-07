@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
-    use 'EdenEast/nightfox.nvim'
     use 'NvChad/nvim-colorizer.lua'
     use({
         "epwalsh/obsidian.nvim",
@@ -43,4 +42,5 @@ return require('packer').startup(function(use)
         use 'MunifTanjim/nui.nvim'
         --        use 'rcarriga/nvim-notify
     use 'folke/which-key.nvim'
+    use "EdenEast/nightfox.nvim"
     end)
