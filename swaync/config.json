@@ -130,11 +130,11 @@
       "actions": [
            {
           "label": " ",
-          "command": "kitty -e nmtui"
+          "command": "kitty --class floating_kitty -e nmtui"
         },
         {
           "label": "",
-          "command": "kitty -e bluetuith"
+          "command": "blueman"
         },
         {
           "label": "󰎞",
