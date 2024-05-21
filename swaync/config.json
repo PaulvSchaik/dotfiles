@@ -130,11 +130,11 @@
       "actions": [
            {
           "label": " ",
-          "command": "kitty --class floating_kitty -e nmtui"
+          "command": "kitty -T nmtui -e nmtui"
         },
         {
           "label": "",
-          "command": "blueman"
+          "command": "kitty -T bluetuith -e bluetuith"
         },
         {
           "label": "󰎞",
@@ -149,8 +149,8 @@
           "command": "pavucontrol"
         },
         {
-          "label": "",
-          "command": "firefox"
+          "label": "",
+          "command": "remmina -c /home/paul/scripts/workspace.remmina"
         }
       ]
     }

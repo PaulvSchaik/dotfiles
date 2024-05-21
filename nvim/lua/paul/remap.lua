@@ -1,11 +1,14 @@
 vim.g.mapleader = " "
 
 --file-explorer
-vim.keymap.set("n", "<leader>et", vim.cmd.NvimTreeToggle, { desc = "Tree toggle" })
-vim.keymap.set("n", "<leader>ec", vim.cmd.NvimTreeCollapse, { desc = "Tree samenvouwen" })
-vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFile, { desc = "Tree open huidig bestand" })
-vim.keymap.set("n", "<leader>er", vim.cmd.NvimTreeRefresh, { desc = "Tree refresh" })
-vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeFocus, { desc = "Tree focus" })
+--moved to oil.nvim
+--vim.keymap.set("n", "<leader>et", vim.cmd.NvimTreeToggle, { desc = "Tree toggle" })
+--vim.keymap.set("n", "<leader>ec", vim.cmd.NvimTreeCollapse, { desc = "Tree samenvouwen" })
+--vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFile, { desc = "Tree open huidig bestand" })
+--vim.keymap.set("n", "<leader>er", vim.cmd.NvimTreeRefresh, { desc = "Tree refresh" })
+--vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeFocus, { desc = "Tree focus" })
+vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open File explorer" })
+vim.keymap.set("n", "<leader>ew", "<CMD>Oil --float<CR>", { desc = "Open File explorer in window" })
 
 --obsidian
 vim.keymap.set("n", "<leader>oh", vim.cmd.ObsidianToday, { desc = "Obsidian vandaag" })

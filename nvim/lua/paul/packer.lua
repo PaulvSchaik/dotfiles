@@ -33,14 +33,17 @@ return require('packer').startup(function(use)
         }
     }
     use 'NvChad/nvim-colorizer.lua'
-    use({
-        "epwalsh/obsidian.nvim",
-        tag = "*",})
-        use 'nvim-tree/nvim-tree.lua'
-        --- testing
-        use 'folke/noice.nvim'
-        use 'MunifTanjim/nui.nvim'
-        --        use 'rcarriga/nvim-notify
+    --use({
+    --    "epwalsh/obsidian.nvim",
+    --    tag = "*",})
+    use 'epwalsh/obsidian.nvim'
+    
+    --- testing
+    use 'folke/noice.nvim'
+    use 'MunifTanjim/nui.nvim'
+    --        use 'rcarriga/nvim-notify
     use 'folke/which-key.nvim'
-    use "EdenEast/nightfox.nvim"
+    use 'EdenEast/nightfox.nvim'
+    use 'stevearc/oil.nvim'
+    --- use 'nvim-tree/nvim-tree.lua'
     end)
