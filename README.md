@@ -36,18 +36,16 @@ I like building my own apps from source and use a Fedora 40 Distrobox container 
 -----------
 OS: Fedora Linux 40 (Workstation Edition) x86_64
 Host: XPS 13 9310 2-in-1
-Kernel: 6.8.8-300.fc40.x86_64
-Packages: 2093 (rpm), 13 (flatpak)
-Shell: zsh 5.9
+Packages: 1347 (rpm), 13 (flatpak)
+Shell: zsh
 Display1 (LG HDR 4K): 3840x2160 @ 120Hz
 Display2 (LG HDR 4K): 3840x2160 @ 120Hz
 WM: Hyprland-git (Wayland)
-Terminal: kitty 0.34.1
+Terminal: kitty 
 Terminal Font: MesloLGS-NF-Regular (14pt)
 CPU: 11th Gen Intel(R) Core(TM) i7-1165G7 (8) @ 4,70 GHz
 GPU: Intel Iris Xe Graphics
 Memory: 1,28 GiB / 31,06 GiB (17%)
 Swap: 0 B / 8,00 GiB (0%)
 Disk (/): 39,19 GiB / 952,28 GiB (8%) - btrfs
-Battery: 100% [AC Connected]
 Locale: nl_NL.UTF-8
