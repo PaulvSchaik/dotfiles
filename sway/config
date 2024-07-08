@@ -260,6 +260,7 @@ bindsym $mod+Ctrl+o [con_mark="obsidian"] focus
 
 # mijn eigen start scripts
 exec xdg-desktop-portal-gtk
+exec wl-paste --watch cliphist store 
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 #exec "sh -c 'sleep 10; exec swaymsg restart'"
 exec gnome-keyring-daemon -d 
