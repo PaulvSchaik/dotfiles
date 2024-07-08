@@ -11,4 +11,10 @@
 
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
 
+//@theme "/home/paul/.local/share/rofi/themes/rounded-blue-dark.rasi"
+
+//@theme "/usr/share/rofi/themes/dmenu.rasi"
+
+//@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
+
 @theme "/home/paul/.local/share/rofi/themes/rounded-blue-dark.rasi"

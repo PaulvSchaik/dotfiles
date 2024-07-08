@@ -19,8 +19,8 @@ font MesloLGS NF 8
 # rand om de vensters
 default_border pixel 2 
 smart_borders off
-gaps inner 15
-gaps outer 5
+gaps inner 3
+gaps outer 3
 
 # kleur (client.<status> #<border> #<achtergrond> #<tekst> #<nieuw-venster-locatie> #<child-border>)
 client.focused #30C0EF #30C0EF #000088 #30EFAC
@@ -45,7 +45,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
 # sluit een venster, herstart sway, herlaad het config bestand
 bindsym $mod+q kill
 bindsym $mod+Shift+b restart
-bindsym $mod+b exec killall waybar && waybar
+bindsym $mod+b exec killall -SIGUSR1 waybar
 bindsym $mod+Shift+c reload
 
 # afsluiten (de ouderweste manier, ik houd niet van swaynag, dus gebruik het niet.
@@ -79,6 +79,11 @@ input "DLL09FF:01 06CB:CE39 Mouse" {
    }
 
 input "1133:16514:Logitech_MX_Master_3" {
+       dwt enabled
+       natural_scroll enabled
+   }
+
+input "1133:45082:MX_Anywhere_2S_Mouse" {
        dwt enabled
        natural_scroll enabled
    }
@@ -227,7 +232,7 @@ bindsym $mod+Shift+r mode "resize"
 
 # venster op een vaste workspace (window rules)
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
-for_window [app_id="google-chrome"] move to workspace $ws3, workspace $ws3
+for_window [app_id="org.mozilla.firefox"] move to workspace $ws3, workspace $ws3
 for_window [app_id="obsidian"] mark "obsidian", move to workspace $ws7, workspace $ws7
 for_window [app_id="Spotify"] move to workspace $ws8, workspace $ws8
 for_window [app_id="steamwebhelper"] move to workspace $ws8, workspace $ws8
@@ -236,9 +241,11 @@ for_window [app_id="virt-manager"] move to workspace $ws9, workspace $ws9
 for_window [app_id="Virt-manager"] move to workspace $ws9, workspace $ws9
 for_window [app_id="org.remmina.Remmina"] move to workspace $ws9, workspace $ws9
 for_window [app_id="floating"] floating enabled, resize set width 30% height 25%
-for_window [app_id="thunderbird"] move to workspace $ws6, floating enabled
+for_window [app_id="thunderbird"] move to workspace $ws6
 for_window [title="Stream Deck UI"] floating enabled
-for_window [title="WhatsApp Web"] mark "whatsapp"
+for_window [title="Agendaherinneringen"] floating enabled
+for_window [title="TbSync account manager"] floating enabled
+for_window [title="com.rtosta.zapzap"] mark "whatsapp"
 
 # Speedkeys voor eigen configs
 bindsym $alt+Return exec kitty --class floating
@@ -252,6 +259,7 @@ bindsym $mod+Ctrl+o [con_mark="obsidian"] focus
 
 
 # mijn eigen start scripts
+exec xdg-desktop-portal-gtk
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 #exec "sh -c 'sleep 10; exec swaymsg restart'"
 exec gnome-keyring-daemon -d 
@@ -261,7 +269,7 @@ exec_always /home/paul/.local/bin/autotiling
 #exec_always /home/paul/scripts/clamshell-always
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec export GTK_THEME=Adwaita
+exec export GTK_THEME=Jasper-dark
 exec_always gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 exec export QT_QPA_PLATFORMTHEME=qt5ct
 exec export GDK_BACKEND=wayland,x11

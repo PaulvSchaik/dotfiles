@@ -21,13 +21,15 @@ alias cat='bat'
 alias nv='nvim'
 alias v='nvim'
 alias vim='nvim'
+alias code='codium'
 alias poweroff='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias cd='z'
 
+#export TODOIST_API_KEY="$(pass Todoist/API)"
 export VISUAL=nvim;
 export EDITOR=nvim;
-export PATH="/home/paul/.local/share/JetBrains/Toolbox/scripts:/home/paul/.cargo/bin:/home/paul/.local/bin:/home/paul/scripts:/var/lib/flatpak/exports/share:/home/paul/.local/share/flatpak/exports/share:$PATH"
+export PATH="/home/paul/.config/tmux/plugins/tmuxifier/bin:/home/paul/.local/share/JetBrains/Toolbox/scripts:/home/paul/.cargo/bin:/home/paul/.local/bin:/home/paul/scripts:/var/lib/flatpak/exports/share:/home/paul/.local/share/flatpak/exports/share:$PATH"
 source /home/paul/.config/op/plugins.sh
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
@@ -71,3 +73,4 @@ _fzf_comprun() {
 eval "$(thefuck --alias)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+eval "$(tmuxifier init -)"

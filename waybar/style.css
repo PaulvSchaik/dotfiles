@@ -14,7 +14,7 @@
   color: @foreground;
   font-size: 18px;
   font-family: "monospace";
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 #workspaces {
@@ -22,6 +22,7 @@
   background-color: @background-darker;
   border-radius: 10px;
   margin: 3px 3px;
+  opacity: 1.0;
 }
 
 #workspaces button {
@@ -72,16 +73,14 @@
   margin-left: 8px;
 }
 #battery.critical {
-  background-color: @red;
-  color: @foreground;
+  color: @red;
   border: 2px solid @foreground;
   margin-left: 8px;
   margin-right: 8px;
 }
 
 #battery.warning {
-  background-color: @orange;
-  color: @background-darker;
+  color: @orange;
   border: 2px solid @background-darker;
   margin-left: 8px;
   margin-right: 8px;

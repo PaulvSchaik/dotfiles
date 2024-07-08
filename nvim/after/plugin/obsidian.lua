@@ -9,13 +9,13 @@ require("obsidian").setup(
     workspaces = {
         {
             name = "notes",
-            path = "~/vaults/notes",
+            path = "/home/paul/vaults/notes/",
         },
    },
 
     -- Alternatively - and for backwards compatibility - you can set 'dir' to a single path instead of
     -- 'workspaces'. For example:
-    -- dir = "~/vaults/work",
+    dir = "~/vaults/notes",
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
     --notes_subdir = "notes",
@@ -28,11 +28,11 @@ require("obsidian").setup(
         -- Optional, if you keep daily notes in a separate directory.
         folder = "journal",
         -- Optional, if you want to change the date format for the ID of daily notes.
-        date_format = "%Y-%m-%d",
+        -- date_format = "%Y-%m-%d",
         -- Optional, if you want to change the date format of the default alias of daily notes.
-        alias_format = "%B %-d, %Y",
+        -- alias_format = "%B %-d, %Y",
         -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-        template = "templates/daily.md"
+        template = "daily.md"
     },
 
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -107,28 +107,28 @@ require("obsidian").setup(
 
     -- Optional, boolean or a function that takes a filename and returns a boolean.
     -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
-    disable_frontmatter = false,
+    disable_frontmatter = true,
 
     -- Optional, alternatively you can customize the frontmatter data.
     ---@return table
-   note_frontmatter_func = function(note)
+   -- note_frontmatter_func = function(note)
         -- Add the title of the note as an alias.
-        if note.title then
-            note:add_alias(note.title)
-        end
+        -- if note.title then
+        --    note:add_alias(note.title)
+        -- end
 
-        local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+        -- local out = { id = note.id, aliases = note.aliases, tags = note.tags }
 
         -- `note.metadata` contains any manually added fields in the frontmatter.
         -- So here we just make sure those fields are kept in the frontmatter.
-        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-            for k, v in pairs(note.metadata) do
-                out[k] = v
-            end
-        end
+        -- if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        --     for k, v in pairs(note.metadata) do
+        --         out[k] = v
+        --     end
+        -- end
 
-      return out
-    end,
+     --  return out
+    -- end,
 
     -- Optional, for templates (see below).
     templates = {

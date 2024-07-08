@@ -18,13 +18,13 @@
         ],
 
     "modules-right": [
-        "group/one"
+        "battery",
+        "group/one",
         ],
 
     "group/one": {
         "orientation": "horizontal",
         "modules": [
-        "battery",
         "clock",
         "tray",
         "custom/notification",
